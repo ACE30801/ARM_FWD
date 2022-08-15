@@ -25,7 +25,7 @@
 
 
 #define BIG_ENDIAN             0    /* MOST SIGNIFICANT bit first */
-#define LITTLE_ENDIAN          1    /* laest  SIGNIFICANT bit first*/
+#define LITTLE_ENDIAN          1    /* least  SIGNIFICANT bit first*/
 
 
 #define _Bool   unsigned char
