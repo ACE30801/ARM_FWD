@@ -1,5 +1,4 @@
 #include "IntCtrl.h"
-#include "IntCtrl_Cfg.h"
 #include "Mcu_Hw.h"
 
 void IntCtrl_init(void)

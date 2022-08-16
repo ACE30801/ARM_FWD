@@ -55,11 +55,13 @@
 
 #define   CORTEXM4_PERIPH_BASE_ADDRESS   0xE000E000
 
-#define   INTCTRL                        *((volatile u32 *))(CORTEXM4_PERIPH_BASE_ADDRESS+0xD04))
-#define   APINT                          *((volatile u32 *))(CORTEXM4_PERIPH_BASE_ADDRESS+0xD0C))
+#define   INTCTRL                        *((volatile u32 *)(CORTEXM4_PERIPH_BASE_ADDRESS+0xD04))
+#define   APINT                          *((volatile u32 *)(CORTEXM4_PERIPH_BASE_ADDRESS+0xD0C))
 
 
                
+
+
 
 /**************************************************
 
@@ -86,5 +88,3 @@
 
 
 
-
-#endif

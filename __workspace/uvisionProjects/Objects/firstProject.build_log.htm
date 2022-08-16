@@ -3,116 +3,66 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.37.0.0
-Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: ayman saad, FWD, LIC=----
+IDE-Version: µVision V5.31.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: ayman saad, student, LIC=----
  
 Tool Versions:
-Toolchain:       MDK-Lite  Version: 5.37.0.0
+Toolchain:       MDK-Lite  Version: 5.31.0.0
 Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
-C Compiler:      ArmClang.exe V6.18
-Assembler:       Armasm.exe V6.18
-Linker/Locator:  ArmLink.exe V6.18
-Library Manager: ArmAr.exe V6.18
-Hex Converter:   FromElf.exe V6.18
-CPU DLL:         SARMCM3.DLL V5.37.0.0
-Dialog DLL:      DCM.DLL V1.17.5.0
-Target DLL:      UL2CM3.DLL V1.164.7.0
-Dialog DLL:      TCM.DLL V1.56.1.0
+C Compiler:      ArmClang.exe V6.14
+Assembler:       Armasm.exe V6.14
+Linker/Locator:  ArmLink.exe V6.14
+Library Manager: ArmAr.exe V6.14
+Hex Converter:   FromElf.exe V6.14
+CPU DLL:         SARMCM3.DLL V5.31.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      UL2CM3.DLL V1.163.4.0
+Dialog DLL:      TCM.DLL V1.46.0.0
  
 <h2>Project:</h2>
 E:\courses\ARM_FWD\Prog\ARM_FWD\__workspace\uvisionProjects\firstProject.uvprojx
-Project File Date:  08/15/2022
+Project File Date:  08/16/2022
 
 <h2>Output:</h2>
-*** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+*** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-ArmClang: error: Your installation could be misconfigured or corrupted.
-ArmClang: note: Check that your licensing and toolkit configuration is set up correctly, using the information available at: https://developer.arm.com/tools-and-software/software-development-tools/license-management/resources/product-and-toolkit-configuration.
-ArmClang: note: Information about this error is available at: http://ds.arm.com/support/lic86
- General licensing information is available at: http://ds.arm.com/support/licensing/
- If you need further help, provide this complete error report to your supplier or license.support@arm.com.
- - ARMLMD_LICENSE_FILE: unset
- - LM_LICENSE_FILE: unset
- - ARM_PRODUCT_DEF: unset
- - ARM_PRODUCT_PATH: 'E:\courses\ARM_FWD\gcc-arm-11.2-2022.02-mingw-w64-i686-arm-none-eabi\gcc-arm-11.2-2022.02-mingw-w64-i686-arm-none-eabi\bin'
- - ARM_TOOL_VARIANT: unset
- - Product location: product not found
- - Toolchain location: C:\Keil_v5\ARM\ARMCLANG\Bin
- - Selected tool variant: product
-Product: unknown
-Component: Arm Compiler for Embedded 6.18
-Tool: armclang [5e4cca00]
-compiling main.c...
-ArmClang: error: Your installation could be misconfigured or corrupted.
-ArmClang: note: Check that your licensing and toolkit configuration is set up correctly, using the information available at: https://developer.arm.com/tools-and-software/software-development-tools/license-management/resources/product-and-toolkit-configuration.
-ArmClang: note: Information about this error is available at: http://ds.arm.com/support/lic86
- General licensing information is available at: http://ds.arm.com/support/licensing/
- If you need further help, provide this complete error report to your supplier or license.support@arm.com.
- - ARMLMD_LICENSE_FILE: unset
- - LM_LICENSE_FILE: unset
- - ARM_PRODUCT_DEF: unset
- - ARM_PRODUCT_PATH: 'E:\courses\ARM_FWD\gcc-arm-11.2-2022.02-mingw-w64-i686-arm-none-eabi\gcc-arm-11.2-2022.02-mingw-w64-i686-arm-none-eabi\bin'
- - ARM_TOOL_VARIANT: unset
- - Product location: product not found
- - Toolchain location: C:\Keil_v5\ARM\ARMCLANG\Bin
- - Selected tool variant: product
-Product: unknown
-Component: Arm Compiler for Embedded 6.18
-Tool: armclang [5e4cca00]
+../firstProject/src/Mcal/IntCtrl.c(1): warning: In file included from...
+../firstProject/src/Mcal/IntCtrl.h(27): warning: In file included from...
+../firstProject/src/Mcal/IntCtrl_Types.h(29): warning: In file included from...
+../../Libs\STD_Types.h(32): warning: 'long long' is an extension when C99 mode is not enabled [-Wlong-long]
+typedef unsigned long long int u64;
+                 ^
+../../Libs\STD_Types.h(37): warning: 'long long' is an extension when C99 mode is not enabled [-Wlong-long]
+typedef signed long long int s64;
+               ^
+2 warnings generated.
 compiling IntCtrl.c...
-ArmClang: error: Your installation could be misconfigured or corrupted.
-ArmClang: note: Check that your licensing and toolkit configuration is set up correctly, using the information available at: https://developer.arm.com/tools-and-software/software-development-tools/license-management/resources/product-and-toolkit-configuration.
-ArmClang: note: Information about this error is available at: http://ds.arm.com/support/lic86
- General licensing information is available at: http://ds.arm.com/support/licensing/
- If you need further help, provide this complete error report to your supplier or license.support@arm.com.
- - ARMLMD_LICENSE_FILE: unset
- - LM_LICENSE_FILE: unset
- - ARM_PRODUCT_DEF: unset
- - ARM_PRODUCT_PATH: 'E:\courses\ARM_FWD\gcc-arm-11.2-2022.02-mingw-w64-i686-arm-none-eabi\gcc-arm-11.2-2022.02-mingw-w64-i686-arm-none-eabi\bin'
- - ARM_TOOL_VARIANT: unset
- - Product location: product not found
- - Toolchain location: C:\Keil_v5\ARM\ARMCLANG\Bin
- - Selected tool variant: product
-Product: unknown
-Component: Arm Compiler for Embedded 6.18
-Tool: armclang [5e4cca00]
-assembling startup_TM4C123.s...
-ArmClang: error: Your installation could be misconfigured or corrupted.
-ArmClang: note: Check that your licensing and toolkit configuration is set up correctly, using the information available at: https://developer.arm.com/tools-and-software/software-development-tools/license-management/resources/product-and-toolkit-configuration.
-ArmClang: note: Information about this error is available at: http://ds.arm.com/support/lic86
- General licensing information is available at: http://ds.arm.com/support/licensing/
- If you need further help, provide this complete error report to your supplier or license.support@arm.com.
- - ARMLMD_LICENSE_FILE: unset
- - LM_LICENSE_FILE: unset
- - ARM_PRODUCT_DEF: unset
- - ARM_PRODUCT_PATH: 'E:\courses\ARM_FWD\gcc-arm-11.2-2022.02-mingw-w64-i686-arm-none-eabi\gcc-arm-11.2-2022.02-mingw-w64-i686-arm-none-eabi\bin'
- - ARM_TOOL_VARIANT: unset
- - Product location: product not found
- - Toolchain location: C:\Keil_v5\ARM\ARMCLANG\Bin
- - Selected tool variant: product
-Product: unknown
-Component: Arm Compiler for Embedded 6.18
-Tool: armclang [5e4cca00]
+../firstProject/src/Config/IntCtrl_Cfg.c(33): warning: In file included from...
+../firstProject/src/Config/IntCtrl_Cfg.h(27): warning: In file included from...
+../../Libs\STD_Types.h(32): warning: 'long long' is an extension when C99 mode is not enabled [-Wlong-long]
+typedef unsigned long long int u64;
+                 ^
+../../Libs\STD_Types.h(37): warning: 'long long' is an extension when C99 mode is not enabled [-Wlong-long]
+typedef signed long long int s64;
+               ^
+2 warnings generated.
 compiling IntCtrl_Cfg.c...
-ArmClang: error: Your installation could be misconfigured or corrupted.
-ArmClang: note: Check that your licensing and toolkit configuration is set up correctly, using the information available at: https://developer.arm.com/tools-and-software/software-development-tools/license-management/resources/product-and-toolkit-configuration.
-ArmClang: note: Information about this error is available at: http://ds.arm.com/support/lic86
- General licensing information is available at: http://ds.arm.com/support/licensing/
- If you need further help, provide this complete error report to your supplier or license.support@arm.com.
- - ARMLMD_LICENSE_FILE: unset
- - LM_LICENSE_FILE: unset
- - ARM_PRODUCT_DEF: unset
- - ARM_PRODUCT_PATH: 'E:\courses\ARM_FWD\gcc-arm-11.2-2022.02-mingw-w64-i686-arm-none-eabi\gcc-arm-11.2-2022.02-mingw-w64-i686-arm-none-eabi\bin'
- - ARM_TOOL_VARIANT: unset
- - Product location: product not found
- - Toolchain location: C:\Keil_v5\ARM\ARMCLANG\Bin
- - Selected tool variant: product
-Product: unknown
-Component: Arm Compiler for Embedded 6.18
-Tool: armclang [5e4cca00]
-compiling system_TM4C123.c...
-".\Objects\firstProject.axf" - 5 Error(s), 0 Warning(s).
+../firstProject/src/Appl/main.c(1): warning: In file included from...
+../../Drivers/IntCtrl/inc\IntCtrl.h(17): warning: In file included from...
+../../Drivers/IntCtrl/inc/IntCtrl_Types.h(29): warning: In file included from...
+../../Libs\STD_Types.h(32): warning: 'long long' is an extension when C99 mode is not enabled [-Wlong-long]
+typedef unsigned long long int u64;
+                 ^
+../../Libs\STD_Types.h(37): warning: 'long long' is an extension when C99 mode is not enabled [-Wlong-long]
+typedef signed long long int s64;
+               ^
+2 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=1124 RO-data=636 RW-data=0 ZI-data=608  
+FromELF: creating hex file...
+".\Objects\firstProject.axf" - 0 Error(s), 6 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -129,19 +79,18 @@ Package Vendor: Keil
    * Component: Startup Version: 1.0.1
 
 <h2>Collection of Component include folders:</h2>
-  ./RTE/_Target_1
-  C:/Users/Administrator/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
-  C:/Users/Administrator/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123
+  .\RTE\_Target_1
+  C:\Users\Administrator\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include
+  C:\Users\Administrator\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil::Device:Startup:1.0.1
-      Source file:   Device/Source/ARM/startup_TM4C123.s
-      Include file:  Device/Include/TM4C123/TM4C123.h
-      Source file:   Device/Source/system_TM4C123.c
-Target not created.
+      Include file:  Device\Include\TM4C123\TM4C123.h
+      Source file:   Device\Source\ARM\startup_TM4C123.s
+      Source file:   Device\Source\system_TM4C123.c
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

@@ -36,7 +36,7 @@
   
 ****************************************************/
 
-#define RESET -3
+#define RESET_TYPE -3
 #define NMI_CONST -2
 #define HARDFAULT -1
 #define MEMORY_MANAGEMENT_FAULT 0
@@ -68,13 +68,13 @@
 #define ADC0Sequence2     IRQ16  
 #define ADC0Sequence3     IRQ17    
 #define WatchdogTimers0_1 IRQ18  
-#define 16/32-BitTimer0A  IRQ19    
+#define _16_32_BitTimer0A  IRQ19    
 
-#define 16/32-BitTimer0B   IRQ20  
-#define 16/32-BitTimer1A   IRQ21
-#define 16/32-BitTimer1B   IRQ22  
-#define 16/32-BitTimer2A   IRQ23
-#define 16/32-BitTimer2B   IRQ24  
+#define _16_32_BitTimer0B   IRQ20  
+#define _16_32_BitTimer1A   IRQ21
+#define _16_32_BitTimer1B   IRQ22  
+#define _16_32_BitTimer2A   IRQ23
+#define _16_32_BitTimer2B   IRQ24  
 #define AnalogComparator0  IRQ25    
 #define AnalogComparator1  IRQ26  
 #define RESERVED6          IRQ27    
@@ -86,8 +86,8 @@
 #define RESERVED8              IRQ32  
 #define UART2                  IRQ33
 #define SSI1                   IRQ34  
-#define 16/32-BitTimer3A       IRQ35    
-#define 16/32-BitTimer3B       IRQ36  
+#define _16_32_BitTimer3A       IRQ35    
+#define _16_32_BitTimer3B       IRQ36  
 #define I2C1                   IRQ37    
 #define QEI1                   IRQ38  
 #define CAN0                   IRQ39    
@@ -125,24 +125,24 @@
 #define I2C2        IRQ68  
 #define I2C3        IRQ69    
 
-#define 16/32-BitTimer4A   IRQ70  
-#define 16/32-BitTimer4B   IRQ71
+#define _16_32_BitTimer4A   IRQ70  
+#define _16_32_BitTimer4B   IRQ71
 /*72-91 reserved*/
-#define 16/32-BitTimer5A   IRQ92  
-#define 16/32-BitTimer5B   IRQ93
-#define 32/64-BitTimer0A   IRQ94  
-#define 32/64-BitTimer0B   IRQ95    
-#define 32/64-BitTimer1A   IRQ96  
-#define 32/64-BitTimer1B   IRQ97    
-#define 32/64-BitTimer2A   IRQ98  
-#define 32/64-BitTimer2B   IRQ99    
+#define _16_32_BitTimer5A   IRQ92  
+#define _16_32_BitTimer5B   IRQ93
+#define _32_64_BitTimer0A   IRQ94  
+#define _32_64_BitTimer0B   IRQ95    
+#define _32_64_BitTimer1A   IRQ96  
+#define _32_64_BitTimer1B   IRQ97    
+#define _32_64_BitTimer2A   IRQ98  
+#define _32_64_BitTimer2B   IRQ99    
 
-#define 32/64-BitTimer3A   IRQ100  
-#define 32/64-BitTimer3B   IRQ101
-#define 32/64-BitTimer4A   IRQ102  
-#define 32/64-BitTimer4B   IRQ103
-#define 32/64-BitTimer5A   IRQ104  
-#define 32/64-BitTimer5B   IRQ105    
+#define _32_64_BitTimer3A   IRQ100  
+#define _32_64_BitTimer3B   IRQ101
+#define _32_64_BitTimer4A   IRQ102  
+#define _32_64_BitTimer4B   IRQ103
+#define _32_64_BitTimer5A   IRQ104  
+#define _32_64_BitTimer5B   IRQ105    
 #define SystemException    IRQ106  
 /*107-133 reserved*/
 #define PWM1Generator0   IRQ134  
@@ -160,13 +160,12 @@
   
 ****************************************************/
 
-enum  IntCtrl_EnumInterrupts{\
-RESET = 1, NMI , HardFault, MemoryManagementFault,\
+static enum  IntCtrl_EnumInterrupts{ RESET = 1, NMI , HardFault, MemoryManagementFault,\
 BusFault, UsageFault,\
  Reserved1, Reserved2, Reserved3, Reserved4,\
  SVCall, DebugMonitor, Reserved5, PendSV,\
  Systick,\
- IRQ0 = 0, IRQ1, IRQ2, IRQ3, IRQ4, IRQ5, IRQ6, IRQ7, IRQ8, IRQ9,\  
+ IRQ0 , IRQ1, IRQ2, IRQ3, IRQ4, IRQ5, IRQ6, IRQ7, IRQ8, IRQ9,\
 IRQ10, IRQ11, IRQ12, IRQ13, IRQ14, IRQ15, IRQ16, IRQ17, IRQ18, IRQ19,\
 IRQ20, IRQ21, IRQ22, IRQ23, IRQ24, IRQ25, IRQ26, IRQ27, IRQ28, IRQ29,\
 IRQ30, IRQ31, IRQ32, IRQ33, IRQ34, IRQ35, IRQ36, IRQ37, IRQ38, IRQ39,\
@@ -200,4 +199,3 @@ IRQ80, IRQ81, IRQ82, IRQ83, IRQ84, IRQ85, IRQ86, IRQ87, IRQ88, IRQ89,\
 
 
 
-#endif
