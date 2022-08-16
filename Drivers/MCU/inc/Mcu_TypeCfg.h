@@ -6,7 +6,7 @@
 
 /**
 *
-*   \file   Mcu_ClockType.h
+*   \file   Mcu_TypeCfg.h
 *   \brief  
 *   
 *   \details
@@ -14,8 +14,8 @@
 ******************************************************/
 
 
-#ifndef MCU_CLOCKTYPE_H_
-#define MCU_CLOCKTYPE_H_
+#ifndef MCU_TYPECFG_H_
+#define MCU_TYPECFG_H_
 
 
 /**************************************************
@@ -23,8 +23,6 @@
   * INCLUDES
   
 ****************************************************/
-
-#include "STD_Types.h"
 
 
 /**************************************************
@@ -34,8 +32,9 @@
 ****************************************************/
 
 
-#define   APINT_KEY     ((u32)(0xFA050000))
-
+#define   MCU_SW_RESET                  DISABLE
+#define   MCU_PERIPHERAL_CLOCK_GATES    
+#define   MCU_CLOCKTYPE                 
 
 /**********************************************************************************************************************
  *  GLOBAL DATA PROTOTYPES
@@ -51,11 +50,11 @@
 
 
 
-#endif /*MCU_CLOCKTYPE_H_*/
+#endif /*MCU_TYPECFG_H_*/
 
 /**************************************************
 
-  * END FILE Mcu_ClockType.h
+  * END FILE Mcu_TypeCfg.h
   
 ****************************************************/
 

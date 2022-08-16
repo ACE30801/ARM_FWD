@@ -160,7 +160,7 @@
   
 ****************************************************/
 
-static enum  IntCtrl_EnumInterrupts{ RESET = 1, NMI , HardFault, MemoryManagementFault,\
+typedef enum { RESET = 1, NMI , HardFault, MemoryManagementFault,\
 BusFault, UsageFault,\
  Reserved1, Reserved2, Reserved3, Reserved4,\
  SVCall, DebugMonitor, Reserved5, PendSV,\
@@ -180,7 +180,6 @@ IRQ80, IRQ81, IRQ82, IRQ83, IRQ84, IRQ85, IRQ86, IRQ87, IRQ88, IRQ89,\
   IRQ120, IRQ121, IRQ122, IRQ123, IRQ124, IRQ125, IRQ126, IRQ127, IRQ128, IRQ129,\
   IRQ130, IRQ131, IRQ132, IRQ133, IRQ134, IRQ135, IRQ136, IRQ137, IRQ138
 }IntCtrl_InterruptType;
-
 
 
 #endif /*INTCTRL_CFG_H_*/
