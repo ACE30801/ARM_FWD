@@ -1,0 +1,72 @@
+**************************************************
+PD4, PD5, PB0, PB1 limit of input voltage is 3.6V
+**************************************************
+GPIOFCL (AFSEL) register  
+write 1 to the bit of the pin to have an alternative function
+**************************************************
+GPIOCTL(CTL) register
+write the number of alternative function on the register of the pin
+pmc group of bits for each pin.
+**************************************************
+
+
+
+
+
+
+
+**************************************************
+GPIODATA (high or low)
+output can read put input can't write
+  
+**************************************************
+GPIOCTR
+input or output
+
+**************************************************
+GPIOIM
+enable or disable external interrupt(enable in NVIC)
+
+other control properties of interrupt
+
+interrupt status and raw status registers:
+    status: 
+        status of pins both enabled or disabled
+    raw status:
+        status of pins with enabled interrupt
+
+register clear flag
+**************************************************
+mode control 
+
+AFSEL bit for each pin.
+
+
+**************************************************
+commit control
+    protect group of registers to avoid accidental writing
+by default all things are unlocked except some special (such as D7-F0)
+
+unlock writing from GPIOLOCK then commit in GPIOCR
+**************************************************
+pad control
+    control 
+      internal pull-up and pull-down and open drain
+      current level
+      slow-rate
+  GPIODEN 
+      control digital or analog pin
+**************************************************
+
+**************************************************
+
+
+
+
+
+
+
+
+
+
+
