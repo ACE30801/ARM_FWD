@@ -14,8 +14,8 @@
  *********************************************************************************************************************/
 #include "STD_Types.h"
 #include "Bit_Math.h"
+#include "Mcu_Hw.h"
 #include "Dio.h"
-#include "Dio_Pri.h"
 
 /**********************************************************************************************************************
 *  LOCAL MACROS CONSTANT\FUNCTION
@@ -79,8 +79,15 @@ Dio_LevelType Dio_ReadChannel(Dio_PortType PortId, Dio_ChannelType ChannelId)
       PortAdd = CORTEXM4_GPIO_F_APB_BASE_ADDRESS;
       break;  
     }
-    
-    return(GET_BIT((*(u32 *)(PortAdd + GPIODATA_OFFSET)), ChannelId));
+    /*do
+  {
+    u32 tempVal = (u32) __LDREX((unsigned long *)var); 
+    tempVal += off;
+    lockedOut = __STREX(tempVal,(unsigned long *)var); 
+  }
+  while ( lockedOut );*/
+		
+    return(GET_BIT((*(((u32 *)(PortAdd + GPIODATA_OFFSET))+(1<<(2+ChannelId)))), ChannelId));
 }
 
 
@@ -123,10 +130,10 @@ void Dio_WriteChannel( Dio_PortType PortId, Dio_ChannelType ChannelId, Dio_Level
     }
     if(Level)
     {
-      SET_BIT((*(u32 *)(PortAdd + GPIODATA_OFFSET)), ChannelId);
+      SET_BIT((*(((u32 *)(PortAdd + GPIODATA_OFFSET))+(1<<(2+ChannelId)))), ChannelId);
     }
     else{
-      CLEAR_BIT((*(u32 *)(PortAdd + GPIODATA_OFFSET)), ChannelId);
+      CLEAR_BIT((*(((u32 *)(PortAdd + GPIODATA_OFFSET))+(1<<(2+ChannelId)))), ChannelId);
     }
   
 }
@@ -171,7 +178,7 @@ Dio_PortLevelType  Dio_ReadPort(Dio_PortType PortId)
       break;  
     }  
     
-    return (*((u8 *)(PortAdd+GPIODATA_OFFSET)));
+    return ((*(((u8 *)(PortAdd + GPIODATA_OFFSET))+(255<<(2)))));
   
 }
 
@@ -213,7 +220,7 @@ void Dio_WritePort(Dio_PortType PortId, Dio_PortLevelType Level)
       break;  
     }
     
-    (*((u8 *)(PortAdd+GPIODATA_OFFSET))) = Level;
+    (*(((u8 *)(PortAdd + GPIODATA_OFFSET))+(255<<(2)))) = Level;
   
   
 }
@@ -260,9 +267,9 @@ Dio_LevelType Dio_FlipChannel(Dio_PortType PortId, Dio_ChannelType ChannelId)
     }
     
     
-    TOGGLE_BIT((*(u32 *)(PortAdd + GPIODATA_OFFSET)), ChannelId);
+    TOGGLE_BIT((*(((u32 *)(PortAdd + GPIODATA_OFFSET))+(1<<(2+ChannelId)))), ChannelId);
     
-    return (GET_BIT((*(u32 *)(PortAdd + GPIODATA_OFFSET)), ChannelId));
+    return (GET_BIT((*(((u32 *)(PortAdd + GPIODATA_OFFSET))+(1<<(2+ChannelId)))), ChannelId));
 }
 
 
@@ -272,4 +279,6 @@ Dio_LevelType Dio_FlipChannel(Dio_PortType PortId, Dio_ChannelType ChannelId)
 /*******************************************************
  *  END OF FILE: Dio.c
  ******************************************************/
+
+
 

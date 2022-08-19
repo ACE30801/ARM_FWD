@@ -30,6 +30,7 @@
 
 #define _Bool   unsigned char
 
+#define _bool   unsigned char
 
 #ifndef FALSE
    #define FALSE  0

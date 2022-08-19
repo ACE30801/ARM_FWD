@@ -352,7 +352,7 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
-            <ClangAsOpt>2</ClangAsOpt>
+            <ClangAsOpt>1</ClangAsOpt>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
@@ -388,6 +388,21 @@
               <FileType>1</FileType>
               <FilePath>..\firstProject\src\Mcal\IntCtrl.c</FilePath>
             </File>
+            <File>
+              <FileName>Cpu_Driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drivers\CpuDriver\src\Cpu_Driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>Dio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drivers\Dio\src\Dio.c</FilePath>
+            </File>
+            <File>
+              <FileName>Mcu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drivers\MCU\src\Mcu.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -407,6 +422,11 @@
               <FileName>IntCtrl_Cfg.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\firstProject\src\Config\IntCtrl_Cfg.c</FilePath>
+            </File>
+            <File>
+              <FileName>Mcu_Cfg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drivers\MCU\src\Mcu_Cfg.c</FilePath>
             </File>
           </Files>
         </Group>

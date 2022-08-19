@@ -42,7 +42,7 @@
 #define MEMORY_MANAGEMENT_FAULT 0
 #define BUS_FAULT 1
 #define USAGE_FAULT 2
-#define PENDSV 3
+#define PENDSV_INTERRUPT 3
 #define SYSTICK 4
 #define INTERRUPTS 1
 #define DEBUG_MONITOR 1
