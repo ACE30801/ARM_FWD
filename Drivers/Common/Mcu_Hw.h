@@ -94,6 +94,38 @@
   }GPIOPCTL_Tag;
 
 
+/*************RCGCWD*****************/
+  typedef struct
+  {
+    u32   R0    :1;
+    u32   R1    :1;
+		u32					:30;
+  }RCGCWD_BF;
+
+  typedef union{
+      u32 R;
+      RCGCWD_BF  B;
+    
+  }RCGCWD_Tag;
+
+	
+/*************WDTCTL*****************/
+  typedef struct
+  {
+    u32   INTEN    	:1;
+    u32   RESEN    	:1;
+		u32   INTTYPE  	:1;
+		u32							:28;
+		u32		WRC				:1;
+  }WDTCTL_BF;
+
+  typedef union{
+      u32 R;
+      WDTCTL_BF  B;
+    
+  }WDTCTL_Tag;
+
+	
 
 /**************************************************
 
@@ -103,7 +135,10 @@
 
 #define   CORTEXM4_PERIPH_BASE_ADDRESS        	0xE000E000
 #define 	CORTEXM4_SYSTEM_CONTROL_BASE_ADDRESS	0x400FE000
+#define		CORTEXM4_WDT0_BASE_ADDRESS						0x40000000
+#define		CORTEXM4_WDT1_BASE_ADDRESS						0x40001000
 	
+/*********GPIO ADDRESSES************/	
 #ifndef CORTEXM4_GPIO_A_APB_BASE_ADDRESS
 #define   CORTEXM4_GPIO_A_APB_BASE_ADDRESS    0x40004000
 #endif
@@ -198,13 +233,39 @@
 #define   GPIOPCID2_OFFSET      0xFF8
 #define   GPIOPCID3_OFFSET      0xFFC
 
+/**************WDT REGISTERS****************/
+
+#define 	WDTLOAD_OFFSET			0x000
+#define 	WDTVALUE_OFFSET			0x004
+#define 	WDTCTL_OFFSET	  		0x008
+#define 	WDTICR_OFFSET				0x00C
+#define 	WDTRIS_OFFSET				0x010
+#define 	WDTMIS_OFFSET			  0x014
+#define 	WDTTEST_OFFSET			0x418
+#define 	WDTLOCK_OFFSET	  	0xC00
+#define 	WDTPERIPHID4_OFFSET	0xFD0
+#define 	WDTPERIPHID5_OFFSET	0xFD4
+#define 	WDTPERIPHID6_OFFSET	0xFD8
+#define 	WDTPERIPHID7_OFFSET	0xFDC
+#define 	WDTPERIPHID0_OFFSET	0xFE0
+#define 	WDTPERIPHID1_OFFSET	0xFE4
+#define 	WDTPERIPHID2_OFFSET	0xFE8
+#define 	WDTPERIPHID3_OFFSET	0xFEC
+#define 	WDTPCELLID0_OFFSET	0xFF0
+#define 	WDTPCELLID1_OFFSET	0xFF4
+#define 	WDTPCELLID2_OFFSET	0xFF8
+#define 	WDTPCELLID3_OFFSET	0xFFC
+
+
 #define   INTCTRL                        (*((volatile INTCTRL_Tag *)(CORTEXM4_PERIPH_BASE_ADDRESS+0xD04)))
 #define   APINT                          (*((volatile u32 *)(CORTEXM4_PERIPH_BASE_ADDRESS+0xD0C)))
 #define 	GPIOHBCTL											 (*((volatile GPIOHBCTL_RCGCGPIO_Tag *)(CORTEXM4_SYSTEM_CONTROL_BASE_ADDRESS+0x06C)))
 #define		RCGCGPIO											 (*((volatile GPIOHBCTL_RCGCGPIO_Tag *)(CORTEXM4_SYSTEM_CONTROL_BASE_ADDRESS+0x608)))
+#define		RCGCWD												 (*((volatile RCGCWD_Tag *)(CORTEXM4_SYSTEM_CONTROL_BASE_ADDRESS+0x600)))
 
 
 #define GPIOLOCK_KEY		0x4C4F434B
+#define WDTLOCK_KEY			0x1ACCE551
 
 /**************************************************
 

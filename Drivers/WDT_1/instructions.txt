@@ -1,0 +1,48 @@
+2 WDT PIOSC (internal oscillator) or system clock
+
+lock and unlock WDT to edit
+
+enable or disable reset 
+
+debugging doesn't stop WDT
+
+
+when reaching zero first time generate interrupt:
+        standard
+        NMI
+type is determined in WDTCTL register(INTTYPE)
+
+reload first value (doesn't wait for ISR)
+
+if second time out -> reset (enabled or disabled from WDTCTL)
+
+refresh watch dog time by one of those methods:
+        write a value to WDTLOAD
+        clear interrupt flag from WDTICR
+        re-enable interrupt from WDTCTL(write 1 to bit 0 WDTCTL)
+
+EN/disable WDT from bit 0 in WDTCTL.
+
+disable WDT after enable can't be done unless you reset.
+
+ 
+synchronize between  WDT1 and CPU so must read bit WRC(31) from WDTCTL if ==1 then operation has ended
+
+
+
+driver:
+
+types: Wdg_ConfigType.
+
+configuration:
+    NotificationEN (pointer to call back function inside ISR in WDT)
+    InterruptType (standard\non_maskable)
+    WdgInitialTimeout
+    WdgMaxTimeout
+    
+void Wdg_Init(const Wdg_ConfigType* ConfigPtr);
+
+void Wdg_SetTriggerCondition(u16 timeout);/*refresh with timeout of ms but inside WDTLOAD insert with ticks*/
+
+
+

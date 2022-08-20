@@ -22,7 +22,7 @@ Dialog DLL:      TCM.DLL V1.46.0.0
  
 <h2>Project:</h2>
 E:\courses\ARM_FWD\Prog\ARM_FWD\__workspace\uvisionProjects\firstProject.uvprojx
-Project File Date:  08/17/2022
+Project File Date:  08/20/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
@@ -38,31 +38,26 @@ typedef signed long long int s64;
                ^
 2 warnings generated.
 compiling main.c...
-../firstProject/src/Mcal/IntCtrl.c(1): warning: In file included from...
-../firstProject/src/Mcal/IntCtrl.h(27): warning: In file included from...
-../firstProject/src/Mcal/IntCtrl_Types.h(29): warning: In file included from...
+../../Drivers/Port/src/Port.c(15): warning: In file included from...
 ../../Libs\STD_Types.h(32): warning: 'long long' is an extension when C99 mode is not enabled [-Wlong-long]
 typedef unsigned long long int u64;
                  ^
 ../../Libs\STD_Types.h(37): warning: 'long long' is an extension when C99 mode is not enabled [-Wlong-long]
 typedef signed long long int s64;
                ^
-2 warnings generated.
-compiling IntCtrl.c...
-../firstProject/src/Config/IntCtrl_Cfg.c(33): warning: In file included from...
-../firstProject/src/Config/IntCtrl_Cfg.h(27): warning: In file included from...
-../../Libs\STD_Types.h(32): warning: 'long long' is an extension when C99 mode is not enabled [-Wlong-long]
-typedef unsigned long long int u64;
-                 ^
-../../Libs\STD_Types.h(37): warning: 'long long' is an extension when C99 mode is not enabled [-Wlong-long]
-typedef signed long long int s64;
-               ^
-2 warnings generated.
-compiling IntCtrl_Cfg.c...
+../../Drivers/Port/src/Port.c(18): warning: In file included from...
+../../Drivers/Port/inc\Port_Cfg.h(41): warning: no previous extern declaration for non-static variable 'Port_ConfigPin' [-Wmissing-variable-declarations]
+Port_ConfigType Port_ConfigPin[PORT_ATTACHED_PINS_NUMBER] =
+                ^
+../../Drivers/Port/inc\Port_Cfg.h(41): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+Port_ConfigType Port_ConfigPin[PORT_ATTACHED_PINS_NUMBER] =
+^
+3 warnings generated.
+compiling Port.c...
 linking...
 Program Size: Code=1124 RO-data=636 RW-data=0 ZI-data=608  
 FromELF: creating hex file...
-".\Objects\firstProject.axf" - 0 Error(s), 6 Warning(s).
+".\Objects\firstProject.axf" - 0 Error(s), 5 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -88,9 +83,9 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil::Device:Startup:1.0.1
-      Include file:  Device\Include\TM4C123\TM4C123.h
-      Source file:   Device\Source\system_TM4C123.c
       Source file:   Device\Source\ARM\startup_TM4C123.s
+      Source file:   Device\Source\system_TM4C123.c
+      Include file:  Device\Include\TM4C123\TM4C123.h
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

@@ -6,7 +6,7 @@
 
 /**
 *
-*   \file   Port_Cfg.h
+*   \file   Wdt_types.h
 *   \brief  
 *   
 *   \details
@@ -14,8 +14,8 @@
 ******************************************************/
 
 
-#ifndef PORT_CFG_H_
-#define PORT_CFG_H_
+#ifndef WDT_TYPES_H_
+#define WDT_TYPES_H_
 
 
 /**************************************************
@@ -25,46 +25,48 @@
 ****************************************************/
 
 #include "STD_Types.h"
-#include "Port_Types.h"
+#include "Wdt_Cfg.h"
 
 /**************************************************
 
   * GLOBAL CONSTANT MACROS
   
 ****************************************************/
-#define PORT_ATTACHED_PINS_NUMBER		4
+
+
 
 /**********************************************************************************************************************
  *  GLOBAL DATA PROTOTYPES
  *********************************************************************************************************************/
 
-Port_ConfigType Port_ConfigPin[PORT_ATTACHED_PINS_NUMBER] =
-/*	PortId 	ChannelId	 PortPinMode				PortPinLevelValue		PortPinDirection	PortPinInternalAttach	PortPinOutputCurrent*/
+typedef enum
 {
-	{	Port_A, Channel_0, PORT_PINMODE_DIO, 	Port_High,					Output,						NoPinAttachType,				NoOutputCurrent		},
-	{Port_A, Channel_1, PORT_PINMODE_DIO, 	Port_High,					Output,						NoPinAttachType,				NoOutputCurrent		},
-	{Port_A, Channel_2, PORT_PINMODE_DIO, 	Port_High,					Output,						NoPinAttachType,				NoOutputCurrent		},
-	{Port_A, Channel_3, PORT_PINMODE_DIO, 	Port_High,					Output,						NoPinAttachType,				NoOutputCurrent		}
-};
+	WDG_STANDARD,
+	WDG_NON_MASKABLE
+}Wdg_InterruptType;
 
+	
 
+typedef struct
+{
+	WDG_WDT1_ISR_FUNC_TYPE(ISR_Fun_Ptr)
+	Wdg_InterruptType InterruptType;
+	_Bool EN_Reset;
+	u32	Wdg_InitialTimeout;
+	u32	Wdg_MaxTimeout;
+	
+}Wdg_ConfigType;
 
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION PROTOTYPES
  *********************************************************************************************************************/
 
 
- 
-
-
-
-
-
-#endif /*PORT_CFG_H_*/
+#endif /*WDT_TYPES_H_*/
 
 /**************************************************
 
-  * END FILE Port_Cfg.h
+  * END FILE Wdt_Types.h
   
 ****************************************************/
 

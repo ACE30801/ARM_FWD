@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libs;C:\Keil_v5\ARM\ARMCLANG\lib\clang\15.0.0\include;..\..\Drivers\Common;..\..\Drivers\CpuDriver\inc;..\..\Drivers\IntCtrl\inc;..\..\Drivers\Dio\inc;..\..\Drivers\MCU\inc</IncludePath>
+              <IncludePath>..\..\Libs;C:\Keil_v5\ARM\ARMCLANG\lib\clang\15.0.0\include;..\..\Drivers\Common;..\..\Drivers\CpuDriver\inc;..\..\Drivers\IntCtrl\inc;..\..\Drivers\Dio\inc;..\..\Drivers\MCU\inc;..\..\Drivers\Port\inc;..\..\Drivers\WDT_1\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -403,6 +403,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\Drivers\MCU\src\Mcu.c</FilePath>
             </File>
+            <File>
+              <FileName>Port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drivers\Port\src\Port.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -427,6 +432,11 @@
               <FileName>Mcu_Cfg.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Drivers\MCU\src\Mcu_Cfg.c</FilePath>
+            </File>
+            <File>
+              <FileName>Port_Cfg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drivers\Port\src\Port_Cfg.c</FilePath>
             </File>
           </Files>
         </Group>
