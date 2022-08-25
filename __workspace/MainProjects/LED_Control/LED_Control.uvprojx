@@ -10,7 +10,6 @@
       <TargetName>Target 1</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6140000::V6.14::ARMCLANG</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -49,10 +48,10 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>firstProject</OutputName>
+          <OutputName>LED_Control</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
-          <CreateHexFile>1</CreateHexFile>
+          <CreateHexFile>0</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
           <ListingPath>.\Listings\</ListingPath>
@@ -134,11 +133,11 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>4096</DriverSelection>
+            <DriverSelection>-1</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -259,17 +258,17 @@
                 <Size>0x0</Size>
               </XRAM>
               <OCR_RVCT1>
-                <Type>1</Type>
+                <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT1>
               <OCR_RVCT2>
-                <Type>1</Type>
+                <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT2>
               <OCR_RVCT3>
-                <Type>1</Type>
+                <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT3>
@@ -279,7 +278,7 @@
                 <Size>0x40000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
-                <Type>1</Type>
+                <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT5>
@@ -313,7 +312,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
+            <Optim>2</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -325,11 +324,11 @@
             <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
-            <uC99>1</uC99>
-            <uGnu>1</uGnu>
+            <uC99>0</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
-            <v6Lang>1</v6Lang>
-            <v6LangP>1</v6LangP>
+            <v6Lang>3</v6Lang>
+            <v6LangP>3</v6LangP>
             <vShortEn>1</vShortEn>
             <vShortWch>1</vShortWch>
             <v6Lto>0</v6Lto>
@@ -339,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libs;C:\Keil_v5\ARM\ARMCLANG\lib\clang\15.0.0\include;..\..\Drivers\Common;..\..\Drivers\CpuDriver\inc;..\..\Drivers\IntCtrl\inc;..\..\Drivers\Dio\inc;..\..\Drivers\MCU\inc;..\..\Drivers\Port\inc;..\..\Drivers\WDT_1\inc;..\..\Drivers\GPT\inc</IncludePath>
+              <IncludePath></IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -361,7 +360,7 @@
             </VariousControls>
           </Aads>
           <LDads>
-            <umfTarg>1</umfTarg>
+            <umfTarg>0</umfTarg>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
             <noStLib>0</noStLib>
@@ -381,79 +380,19 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Mcal</GroupName>
-          <Files>
-            <File>
-              <FileName>IntCtrl.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\firstProject\src\Mcal\IntCtrl.c</FilePath>
-            </File>
-            <File>
-              <FileName>Cpu_Driver.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Drivers\CpuDriver\src\Cpu_Driver.c</FilePath>
-            </File>
-            <File>
-              <FileName>Dio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Drivers\Dio\src\Dio.c</FilePath>
-            </File>
-            <File>
-              <FileName>Mcu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Drivers\MCU\src\Mcu.c</FilePath>
-            </File>
-            <File>
-              <FileName>Port.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Drivers\Port\src\Port.c</FilePath>
-            </File>
-            <File>
-              <FileName>GPT.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Drivers\GPT\src\GPT.c</FilePath>
-            </File>
-            <File>
-              <FileName>Wdt.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Drivers\WDT_1\src\Wdt.c</FilePath>
-            </File>
-          </Files>
+          <GroupName>HAL</GroupName>
         </Group>
         <Group>
-          <GroupName>Appl</GroupName>
-          <Files>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\firstProject\src\Appl\main.c</FilePath>
-            </File>
-          </Files>
+          <GroupName>MCAL</GroupName>
         </Group>
         <Group>
-          <GroupName>Config</GroupName>
-          <Files>
-            <File>
-              <FileName>IntCtrl_Cfg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\firstProject\src\Config\IntCtrl_Cfg.c</FilePath>
-            </File>
-            <File>
-              <FileName>Mcu_Cfg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Drivers\MCU\src\Mcu_Cfg.c</FilePath>
-            </File>
-            <File>
-              <FileName>Port_Cfg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Drivers\Port\src\Port_Cfg.c</FilePath>
-            </File>
-            <File>
-              <FileName>GPT_Cfg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Drivers\GPT\src\GPT_Cfg.c</FilePath>
-            </File>
-          </Files>
+          <GroupName>SERVICE</GroupName>
+        </Group>
+        <Group>
+          <GroupName>APPLICATION</GroupName>
+        </Group>
+        <Group>
+          <GroupName>LIBRARIES</GroupName>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>
@@ -500,20 +439,5 @@
       </file>
     </files>
   </RTE>
-
-  <LayerInfo>
-    <Layers>
-      <Layer>
-        <LayName>&lt;Project Info&gt;</LayName>
-        <LayDesc></LayDesc>
-        <LayUrl></LayUrl>
-        <LayKeys></LayKeys>
-        <LayCat></LayCat>
-        <LayLic></LayLic>
-        <LayTarg>0</LayTarg>
-        <LayPrjMark>1</LayPrjMark>
-      </Layer>
-    </Layers>
-  </LayerInfo>
 
 </Project>

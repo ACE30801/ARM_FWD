@@ -5,6 +5,7 @@
 #include "Mcu_Type.h"
 #include "Port.h"
 #include "Wdt.h"
+#include "Gpt.h"
 
 int main(void)
 {
