@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libs;C:\Keil_v5\ARM\ARMCLANG\lib\clang\15.0.0\include;..\..\Drivers\Common;..\..\Drivers\CpuDriver\inc;..\..\Drivers\IntCtrl\inc;..\..\Drivers\Dio\inc;..\..\Drivers\MCU\inc;..\..\Drivers\Port\inc;..\..\Drivers\WDT_1\inc;..\..\Drivers\GPT\inc</IncludePath>
+              <IncludePath>..\..\Libs;C:\Keil_v5\ARM\ARMCLANG\lib\clang\15.0.0\include;..\..\Drivers\Common;..\..\Drivers\CpuDriver\inc;..\..\Drivers\IntCtrl\inc;..\..\Drivers\Dio\inc;..\..\Drivers\MCU\inc;..\..\Drivers\Port\inc;..\..\Drivers\WDT_1\inc;..\..\Drivers\GPT\inc;..\..\Drivers\Adc\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -417,6 +417,11 @@
               <FileName>Wdt.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Drivers\WDT_1\src\Wdt.c</FilePath>
+            </File>
+            <File>
+              <FileName>Adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drivers\Adc\src\Adc.c</FilePath>
             </File>
           </Files>
         </Group>

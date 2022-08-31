@@ -141,7 +141,7 @@ void Wdg_SetTriggerCondition(u16 timeout)
 	
 	/*TODO write value of timeout to the WDTLOAD*/	
 	
-	(*((u32 *)(CORTEXM4_WDT1_BASE_ADDRESS+WDTLOAD_OFFSET))) = timeout;
+	(*((u32 *)(CORTEXM4_WDT1_BASE_ADDRESS+WDTLOAD_OFFSET))) = timeout * SystemClock;/*multiply by system clock to calculate the number of ticks*/
 			
 	
 	/*TODO relock by writing any number into WDTLOCK*/	

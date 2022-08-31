@@ -1,0 +1,74 @@
+When using concatenation:
+    Can't use pre-scaler
+    Control is from timer A
+6 16/32 bit
+6 32/64 bit
+
+
+True pre-scaler in count down 
+
+At  count up pre-scaler work as timer extension(increase number of bits which works as frequency devision by 2 to the power of number of bits) and when returning time ignore first n bits of the timer
+
+Registers
+GPTMTNMR:
+          Set timer mode
+GPTMCFG:
+         Need initialization
+         (ignore anything that has a relation with the pwm and icu and rtc)
+GPTMCTL:
+         Start and stop timer
+GPTMIMR:
+          Enable or disable interrupt
+GPTMTAV:
+          Get elapsed/remaining time value (in ticks)
+          The value have to be shifted based on the pre-scaler
+          
+          
+
+configurations:
+        GPT_PREDEFINED_TIMER /*Enable/Disable.*/
+         
+        #define  GPT_PREDEFINED_TIMER_100US_32BIT 0 
+        #define  GPT_PREDEFINED_TIMER_1US_16BIT   1   
+        #define  GPT_PREDEFINED_TIMER_1US_24BIT   2  
+        #define  GPT_PREDEFINED_TIMER_1US_32BIT   3  
+        typedef struct{
+            Gpt_ChannelId;/*timer0 to 12*/
+            Gpt_GptChannelTickFrequency;/*to know the pre-scaler(shift amount)*/
+            Gpt_ChannelTickValueMax;/*to know number of bits user is interested in*/
+            Gpt_ChannelModeType ChannelMode;/*typedef enum{GPT_CH_MODE_CONTINUOUS, GPT_CH_MODE_ONESHOT}Gpt_ModeType;*/
+            void (*GptNotification)(void); /*Ptr to the callBack function*/
+        
+        }Gpt_ConfigType;
+          
+        typedef u32 Gpt_ValueType;
+        
+        
+        
+        u8 Gpt_PredefTimerType;/*take value from 0->3 for predefined timers*/
+        /*define predefined timer using #if*/
+        
+        
+        
+void Gpt_Init(const Gpt_ConfigType * ConfigPtr):set configuration.
+
+void Gpt_StartTimer(Gpt_ChannelType Channel, Gpt_ValueType Value);  /*target time in number of counts but in the pre-scaler that was determined by user*/
+void Gpt_StopTimer(Gpt_ChannelType Channel);  //in continuous mode not one shot that expires automatically.
+
+void Gpt_DisableNotification(Gpt_ChannelType Channel);
+void Gpt_EnableNotification(Gpt_ChannelType Channel);
+
+void Gpt_Notification_<channel>(void);
+
+
+Gpt_ValueType Gpt_GetTimeElapsed(Gpt_ChannelType Channel);
+Gpt_ValueType Gpt_GetTimeRemaining(Gpt_ChannelType Channel);
+
+Std_ReturnType Gpt_GetPredefTimerValue(Gpt_PredefTimerType PredefTimer, u32* TimeValuePtr);
+
+
+
+
+
+
+

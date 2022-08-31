@@ -68,6 +68,8 @@
 #define CPU_BIT_ORDER    LITTLE_ENDIAN
 #define CPU_BYTE_ORDER   LITTLE_ENDIAN
 
+#define SystemClock		12000		/*global system clock in KHz*/	
+	
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION MACROS
  *********************************************************************************************************************/
